@@ -8,10 +8,12 @@ class kirbytextExtended extends kirbytext {
      
 
     $this->addTags('html5video');
-    
     $this->addAttributes('hls');
     $this->addAttributes('h264');
     $this->addAttributes('webm');
+      
+    $this->addtags('html5youtube');
+    $this->addAttributes('options');
     
   }
   
@@ -25,7 +27,7 @@ class kirbytextExtended extends kirbytext {
     );
     $options = array_merge($defaults, $params);
 
-    $baseurl = 'http://jtbyt-pictures.de/video/';
+    $baseurl =  url('/video/');
     $posterurl = $baseurl . urlencode($source) . '-poster.png';
     
     if ($options['hls'] == true) {
@@ -46,12 +48,24 @@ class kirbytextExtended extends kirbytext {
     else {
       $webmsource = "";}
     
-    return '<video class=html5player controls="controls" poster="' . $posterurl . '">' . 
+    return '<video class=html5player controls="controls" poster="' . $posterurl . '" preload="none">' . 
       $hlssource . 
       $mp4source . 
       $webmsource .
       'Dein Browser kann HTML5-Video nicht. Nimm eine aktuelle Version. Your browser does not support the video tag, choose an other browser.' . 
       '</video>';
+  }
+    
+    
+  function html5youtube($params) {
+    $videoID = $params['html5youtube'];
+    
+    $options = $params['options'];
+    
+    $base = 'https://www.youtube-nocookie.com/embed/';
+    $end = '?rel=0&html5=1';
+    
+    return '<div class="video-container"><iframe src="' . $base . $videoID . $end . $options . '" frameborder="0" allowfullscreen="1"></iframe></div>';
   }
   
 }
