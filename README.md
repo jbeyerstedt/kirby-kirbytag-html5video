@@ -2,8 +2,9 @@
 
 ## html5 video markdown
 
-This is an extension of kirbytext for the [kirby cms](getkirby.com), which adds the possibiliy to add html5-video very simple in your text file.  
-It will add source links for a poster, HTTP-live-streaming, mp4 (h.264) and webm source. You can exclude some of them if you have no source.
+This is an extension of kirbytext for the [kirby cms](getkirby.com), which adds the possibiliy to add html5-video very simple in your text file like any link you add. It´s done by extending the default kirbytags in the file kirbytag.extend.php.  
+This extension/ funciton will generate the HTML5-video-tag element with the correct source files. It can handle links to mp4 (h.264), webm and HTTP-live-streaming sources (you can disable some) as well as a poster. A special feature of this kirbytag-extension is, that the videos can be stored in a seperate folder so they can be at an other location than the content-folder.
+
 
 #### how to use
 * store your video files in a folder named "video" in your html-root
@@ -28,10 +29,10 @@ example (in your video folder):  | cool-video-poster.png | /cool-video-hls/cool-
 	   (html5video: cool-video webm: FALSE hls: FALSE)  
 
 #### why not store the video files in the content-folder?
-I choosed to store all the videos in a seperate folder, because all my html-root is synced to my dropbox. But the video-files are quite big, so I excluded the video-folder from the sync.  
+I choosed to store all the videos in a seperate folder, because all my html-root is synced to my dropbox (I´m very lazy to sync my local HTML-editor and my webserver). But the video-files are quite big, so I excluded the video-folder from the sync.  
 ** exclude this folder from dropbox-sync before you add any content to that folder! Or move the content temprary to another folde! Otherwise alle the content in the excluded folder will be removed from the local directory (but not the server)**
 
-So I add video-files via FTP an edit all my other files via dropbox sync to my computers dorectory.
+So I add video-files via (S)FTP an edit all my other files via dropbox sync to my computers dorectory.
 
 
 #### CSS
@@ -44,6 +45,8 @@ Add this little rule to make the player fill the full width of the parent-contai
     
 #### to do:
 perhaps someone can add a auto-detection, if the source file exists, so you needn´t add the options manually.
+
+
 
 ## responsive youtube player embedding
 
