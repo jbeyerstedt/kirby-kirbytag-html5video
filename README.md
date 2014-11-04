@@ -1,12 +1,28 @@
-## README: kirby-kirbytag-html5video
+# kirbytag html5video
+by jtByt.Pictures, Jannik Beyerstedt from Hamburg, Germany  
+[jannik.beyerstedt.de](http://jannik.beyerstedt.de) | [Github](https://github.com/jtByt-Pictures)  
 
-## html5 video markdown
 
-This is an extension of kirbytext for the [kirby cms](getkirby.com), which adds the possibiliy to add html5-video very simple in your text file like any link you add. It´s done by extending the default kirbytags in the file kirbytag.extend.php.  
-This extension/ funciton will generate the HTML5-video-tag element with the correct source files. It can handle links to mp4 (h.264), webm and HTTP-live-streaming sources (you can disable some) as well as a poster. A special feature of this kirbytag-extension is, that the videos can be stored in a seperate folder so they can be at an other location than the content-folder.
+## responsive html5 video player for lazy people
+
+#### update:
+This is the version for kirby 2! html5youtube has moved to [it´s own repository](https://github.com/jtByt-Pictures/kirby-kirbytag-html5youtube)
+
+## Introduction
+
+This is an extension of kirbytext for the [kirby cms](getkirby.com), which adds an easy way to embed your self-hosted html5-video sources in a responsive layout. This means, you can use it responsive, or it´ll adapt to your layout anyway.  
+
+I know that there are some other solutions out there, but I´m lazy, so this is the version for the lazy people.
+  
+This extension can handle mp4 (h.264), webm and HTTP-live-streaming sources as well as a poster. You can select, which versions you have.  
+Another special feature is, that the videos are stored in a special folder to keen bug data in one place.
 
 
 #### how to use
+store this file in
+	
+	site/tags/
+
 * store your video files in a folder named "video" in your html-root
 	* or change the $baseurl in the php
 * have a name for your video-files, e.g. "NAME"
@@ -28,12 +44,6 @@ example (in your video folder):  | cool-video-poster.png | /cool-video-hls/cool-
 *  
 	   (html5video: cool-video webm: FALSE hls: FALSE)  
 
-#### why not store the video files in the content-folder?
-I choosed to store all the videos in a seperate folder, because all my html-root is synced to my dropbox (I´m very lazy to sync my local HTML-editor and my webserver). But the video-files are quite big, so I excluded the video-folder from the sync.  
-** exclude this folder from dropbox-sync before you add any content to that folder! Or move the content temprary to another folde! Otherwise alle the content in the excluded folder will be removed from the local directory (but not the server)**
-
-So I add video-files via (S)FTP an edit all my other files via dropbox sync to my computers dorectory.
-
 
 #### CSS
 
@@ -43,30 +53,15 @@ Add this little rule to make the player fill the full width of the parent-contai
     .html5player {width: 100%; height: auto;}
     
     
+#### why not store the video files in the content-folder?
+I choosed to store all the videos in a seperate folder, because all my html-root is synced to my dropbox (I´m very lazy to sync my local HTML-editor and my webserver). But the video-files are quite big, so I excluded the video-folder from the sync.  
+** exclude this folder from dropbox-sync before you add any content to that folder! Or move the content temprary to another folde! Otherwise alle the content in the excluded folder will be removed from the local directory (but not the server)**
+
+So I add video-files via (S)FTP an edit all my other files via dropbox sync to my computers dorectory.
+
+ 
 #### to do:
-perhaps someone can add a auto-detection, if the source file exists, so you needn´t add the options manually.
+- auto-detection if the source files exist.
 
 
 
-## responsive youtube player embedding
-
-#### how to use
-
-simply add your video ID in your markdown in the following way:
-
-    (html5youtube: {video-ID})
-
-you will only need the youtube-video-ID, not the whole link. Of course you can add more options (the ones that are in the embedding URL. See [google embedding options reference](https://developers.google.com/youtube/player_parameters?hl=en#Parameters). )
-
-Now your markdown tag can look like this:
-
-	(html5youtube: {video-ID} options: &modestbranding=1)
-
-
-#### CSS
-
-simply add this two lines of code to your CSS file to make the youtube-player responsive/ switch from fixed size to the width of the container it is placed in.
-
-	div.video-container {width: 100%; padding-bottom: 56%; padding-top: 30px; height: 0; overflow: hidden; max-width: 100%; height: auto; position: relative;}
-	
-	.video-container iframe {position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
