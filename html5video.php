@@ -3,7 +3,7 @@
  * kirbytag html5video
  * html5 video player embedding for lazy people
  * 
- * copyright: Jannik Beyerstedt | http://jannikbeyerstedt.de | jtByt.Pictures@gmail.com
+ * copyright: Jannik Beyerstedt | http://jannikbeyerstedt.de | code@jannikbeyerstedt.de
  * license: http://www.gnu.org/licenses/gpl-3.0.txt GPLv3 License
  *
  * version 2.0 (03.11.2014)
