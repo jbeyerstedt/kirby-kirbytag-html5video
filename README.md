@@ -1,6 +1,6 @@
 # kirbytag html5video
-by jtByt.Pictures, Jannik Beyerstedt from Hamburg, Germany  
-[jannik.beyerstedt.de](http://jannik.beyerstedt.de) | [Github](https://github.com/jbeyerstedt)  
+by Jannik Beyerstedt from Hamburg, Germany  
+[jannikbeyerstedt.de](http://jannikbeyerstedt.de) | [Github](https://github.com/jbeyerstedt)  
 
 
 ## responsive html5 video player for lazy people
