@@ -50,7 +50,7 @@ example (in your video folder):  | cool-video-poster.png | /cool-video-hls/cool-
 you can add css-rules for the class "html5player" to style the video-player:
 Add this little rule to make the player fill the full width of the parent-container and have the aspect-ratio of the poster-file
 
-    .html5player {width: 100%; height: auto;}
+    .html5player {width: 100%; height: auto; background-color: black;}
     
     
 #### why not store the video files in the content-folder?

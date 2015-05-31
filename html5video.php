@@ -25,19 +25,19 @@ kirbytext::$tags['html5video'] = array(
     $posterurl = $baseurl . urlencode($source) . '-poster.png';
 
 
-    if ($tag->attr('hls') == null || $tag->attr('hls') == true ) {
+    if ($tag->attr('hls') === null || strtolower($tag->attr('hls')) === 'true' ) {
       $hlsurl = $baseurl . urlencode($source) . '-hls/' . urlencode($source) . '-index.m3u8';
       $hlssource = '<source src="' . $hlsurl . '" type="application/x-mpegurl">';}
     else {
       $hlssource = "";}
 
-    if ($tag->attr('hls') == null || $tag->attr('h264') == true) {
+    if ($tag->attr('h264') === null || strtolower($tag->attr('h264')) === 'true' ) {
       $mp4url = $baseurl . urlencode($source) . '-h264.mp4';
       $mp4source = '<source src="' . $mp4url . '" type="video/mp4">';}
     else {
       $mp4source = "";}
 
-    if ($tag->attr('hls') == null || $tag->attr('webm') == true) {
+    if ($tag->attr('webm') === null || strtolower($tag->attr('webm')) === 'true' ) {
       $webmurl = $baseurl . urlencode($source) . '-webm.webm';
       $webmsource = '<source src="' . $webmurl . '" type="video/webm">';}
     else {
