@@ -6,10 +6,11 @@
  * copyright: Jannik Beyerstedt | http://jannikbeyerstedt.de | code@jannikbeyerstedt.de
  * license: http://www.gnu.org/licenses/gpl-3.0.txt GPLv3 License
  *
- * version 2.1 (06.04.2015)
+ * version 2.2 (31.05.2015)
  * changelog:
  * - v2.0: kirby 2 support
  * - v2.1: fix broken default values
+ * - v2.2: autodetection for poster file
  */
 
 kirbytext::$tags['html5video'] = array(
@@ -42,9 +43,15 @@ kirbytext::$tags['html5video'] = array(
       $webmsource = '<source src="' . $webmurl . '" type="video/webm">';}
     else {
       $webmsource = "";}
+    
+    if (file_exists($source . '-poster.png')) {
+      $postersource = 'poster="' . $posterurl . '"';
+    }else {
+      $postersource = '';
+    }
+    
 
-
-    return '<video class=html5player controls="controls" poster="' . $posterurl . '" preload="none">' .
+    return '<video class=html5player controls="controls" ' . $postersource . ' preload="none">' .
       $hlssource .
       $mp4source .
       $webmsource .
