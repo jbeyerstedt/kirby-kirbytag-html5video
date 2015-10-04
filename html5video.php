@@ -43,13 +43,13 @@ kirbytext::$tags['html5video'] = array(
       $webmsource = '<source src="' . $webmurl . '" type="video/webm">';}
     else {
       $webmsource = "";}
-    
+
     if (file_exists($source . '-poster.png')) {
       $postersource = 'poster="' . $posterurl . '"';
     }else {
       $postersource = '';
     }
-    
+
 
     return '<video class=html5player controls="controls" ' . $postersource . ' preload="none">' .
       $hlssource .
