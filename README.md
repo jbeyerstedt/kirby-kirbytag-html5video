@@ -1,24 +1,21 @@
-# kirbytag html5video
-by Jannik Beyerstedt from Hamburg, Germany
-[jannikbeyerstedt.de](http://jannikbeyerstedt.de) | [Github](https://github.com/jbeyerstedt)
-
-
-## responsive html5 video player for lazy people
-
-#### update:
-This is the version for kirby 2! And html5youtube has moved to [it´s own repository](https://github.com/jtByt-Pictures/kirby-kirbytag-html5youtube).
+# kirby CMS - kirbytag: html5video
+by Jannik Beyerstedt from Hamburg, Germany  
+[jannikbeyerstedt.de](http://jannikbeyerstedt.de) | [Github](https://github.com/jbeyerstedt)  
+**license:** GNU GPL v3
 
 ## Introduction
+**responsive html5 video player for lazy people**
 
 This is an extension of kirbytext for the [kirby cms](getkirby.com), which adds an easy way to embed your self-hosted html5-video sources in a responsive layout. This means, you can use it responsive, or it'll adapt to your layout anyway.
 
 I know that there are some other solutions out there, but I'm lazy, so this is the version for the lazy people.
 
-This extension can handle mp4 (h.264), webm and HTTP-live-streaming sources as well as a poster. You can select, which versions you have.
+This extension can handle mp4 (h.264), webm and HTTP-live-streaming sources as well as a poster. You can select, which versions you have.  
 Another special feature is, that the videos are stored in a special folder to keen bug data in one place.
 
+## User Manual
 
-#### how to use
+#### How to Use
 store this file in
 
     site/tags/
@@ -45,7 +42,6 @@ example (in your video folder):  | cool-video-poster.png | /cool-video-hls/cool-
 
 
 #### CSS
-
 you can add css-rules for the class "html5player" to style the video-player:
 Add this little rule to make the player fill the full width of the parent-container and have the aspect-ratio of the poster-file
 
@@ -53,7 +49,7 @@ Add this little rule to make the player fill the full width of the parent-contai
 
 
 #### why not store the video files in the content-folder?
-I choosed to store all the videos in a seperate folder, because all my html-root is synced to my dropbox (I'm very lazy to sync my local HTML-editor and my webserver). But the video-files are quite big, so I excluded the video-folder from the sync.
+I choosed to store all the videos in a seperate folder, because all my html-root is synced to my dropbox (I'm very lazy to sync my local HTML-editor and my webserver). But the video-files are quite big, so I excluded the video-folder from the sync.  
 ** exclude this folder from dropbox-sync before you add any content to that folder! Or move the content temprary to another folde! Otherwise alle the content in the excluded folder will be removed from the local directory (but not the server)**
 
 So I add video-files via (S)FTP an edit all my other files via dropbox sync to my computers directory.
@@ -61,8 +57,9 @@ So I add video-files via (S)FTP an edit all my other files via dropbox sync to m
 **Update:** I don't use dropbox to sync my contents any more, but I find it still handy to keep very big files out of the content folder.
 
 
-#### to do:
+#### TODO:
 - auto-detection if the source files exist.
 
 
-
+## Contribution
+Feel free to fork this repository and make it better.
